@@ -1,0 +1,59 @@
+import matplotlib.pyplot as plt
+import pandas as pd
+
+#Task 1: Load and Explore the 
+#import dataset
+data = pd.read_csv('iris.csv')
+
+#load the dataset using pandas
+df = pd.DataFrame(data)
+
+#Display the first row using .head()
+print(df.head())
+
+#Explore the structure of the dataset
+print(df.info())
+
+#Filling and dropping the missing values
+print(df.isnull().sum())
+df = df.fillna(df.mean())
+
+#Task 2: Basic Data Analysis
+#compute basic statistic
+print(df.describe())
+
+#Grouping by categorical column(species) and computing mean
+grouped_means = df.groupby('species').mean()
+print(grouped_means)
+
+#Task 3: Data Visualization
+#Line chart
+plt.plot(df['sepal length (cm)'], color = 'blue')
+plt.title('Line Chart: Sepal Length')
+plt.xlabel('Index')
+plt.ylalel('Sepal Length(cm)')
+plt.show()
+
+#Bar chart
+avg_petal_lenght = df.groupby('target')['petal length (cm)'].mean()
+avg_petal_lenght.plot(kind = 'bar',)
+plt.title('Bar Chart: Average Petal Length per Species')
+plt.xlabel('Species (0 = setosa, 1=versicolor, 2=virginica)')
+plt.ylabel('Average Petal Length (cm)')
+plt.show()
+
+#Histogram
+plt.hist(df['sepal lenght(cm)'], bins=10)
+plt.title('Histogram: Sepal Length Distribution')
+plt.xlabel('Sepal Length (cm)')
+plt.ylabel('Petal Length (cm)')
+plt.show()
+
+#Scatter plot
+plt.scatter(species_data["sepal length (cm)"], species_data["petal length (cm)"], label=iris.target_names[target])
+plt.title('Scatter Plot: Sepal Lenght vs Petal Lenght')
+plt.xlabel('Sepal Length(cm)')
+plt.ylabel('Petal Length(cm)')
+plt.show()
+
+
