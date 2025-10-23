@@ -1,0 +1,50 @@
+ASSIGNMENT REPORT: CORD-19 Research Data Analysis
+The CORD-19 dataset, a large collection of COVID-19-related research papers, provides a valuable resource for analyzing publication trends and identifying major research themes.
+
+This assignment focuses on cleaning, analyzing, and visualizing data from the CORD-19 metadata to uncover publication patterns, highlight active journals, and summarize key topics explored by researchers.
+The analysis was implemented in Jupyter Notebook, and an interactive Streamlit application was developed to make the results easily accessible and visually engaging.
+
+OBJECTIVES
+The goal of this assignment was to perform exploratory data analysis (EDA) on the CORD-19 dataset to:
+1. Identify yearly publication trends.
+2. Determine the most active journals publishing COVID-19 research.
+3. Examine common keywords in paper titles using word frequency and word clouds.
+4. Create an interactive dashboard using Streamlit for dynamic data exploration.
+
+DATA OVERVIEW
+Source: CORD-19 Open Research Dataset (metadata.csv)
+Total records analyzed: 10,000
+Key columns:
+title, authors, abstract, publish_time, journal, source_x
+
+KEY FINDINGS
+1. Publication Trend
+- A sharp rise in research activity was observed between 2020 and 2021, aligning with the peak of the global pandemic.
+- Publications declined slightly after 2022 as COVID-19 research stabilized.
+2. Top Journals
+- The most active publishers were Nature, The Lancet, BMJ, and Journal of Medical Virology.
+- These journals contributed heavily to early pandemic studies on treatment, prevention, and global health response.
+3. Frequent Words in Paper Titles
+- Frequent terms included COVID-19, SARS-CoV-2, infection, response, and patients.
+- This reflects the scientific community’s focus on disease mechanisms, immunity, and patient outcomes.
+4. Word Cloud Visualization
+- The word cloud clearly highlighted Human, Infection, Protein, COVID, virus, pandemic, and health as dominant words, confirming key research themes.
+
+STREAMLIT APPLICATION
+An interactive Streamlit dashboard was created with the following features:
+- Dataset preview: Displays a sample of the dataset.
+- Publication trends: Interactive bar chart showing publications by year.
+- Top journals: Visual display of the 10 most active journals.
+- Word cloud: Graphical visualization of common words in paper titles.
+- Year range slider: Allows users to filter and focus on specific publication years.
+
+CHALLENGES
+- Data acquisition: The dataset was very large, which made loading and processing slow. To manage this, a smaller subset of the data was extracted for faster analysis.
+
+- Handling missing values: Several records had missing publication dates and journal names, requiring careful filtering to maintain data quality.
+
+- Streamlit integration: Running Streamlit from Jupyter initially caused compatibility warnings and file path confusion. This was resolved by creating a separate app.py file.
+
+- Library setup: Some visualization libraries like wordcloud were not pre-installed and had to be added manually.
+
+-   Maintaining consistent data references: Ensuring the same cleaned dataset (metadata_clean.csv) was used across both the notebook and the Streamlit app.
